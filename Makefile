@@ -1,10 +1,10 @@
 .DEFAULT_GOAL := help
 
-HOST ?= 0.0.0.0
+HOST ?= 127.0.0.1
 PORT ?= 8000
 
-run: ## Run the application using uvicorn with provided arguments or defaults
-	poetry run uvicorn main:app --host $(HOST) --port $(PORT) --reload
+run: ## Run the application using uvicorn with provided arguments or defaults --host $(HOST) --port $(PORT) --env-file .local.env
+	poetry run uvicorn main:app --reload --env-file .local.env
 
 install:  ## Install a dependency using poetry
 	@echo "Installing dependency $(LIBRARY)"
