@@ -1,5 +1,4 @@
 from fastapi import FastAPI, APIRouter, status
-from database.database import get_db_connection
 from schema.tasks import Task
 
 router = APIRouter(prefix="/task", tags=["task"])
